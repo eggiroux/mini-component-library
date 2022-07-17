@@ -10,14 +10,14 @@ const STYLES = {
   small: {
     fontSize: `${14 / 16}rem`,
     borderWidth: '1px',
-    height: 24,
+    height: '24px',
     iconSize: 16,
     iconStroke: 1,
   },
   large: {
     fontSize: `${18 / 16}rem`,
     borderWidth: '2px',
-    height: 36,
+    height: '36px',
     iconSize: 24,
     iconStroke: 2,
   },
@@ -27,15 +27,15 @@ const IconInput = ({ label, icon, width = 250, size, placeholder }) => {
   const styles = STYLES[size];
 
   return (
-    <Wrapper width={width} style={{}}>
+    <Wrapper style={{}}>
       <VisuallyHidden>{label}</VisuallyHidden>
       <IconWrapper style={{ '--size': ` ${styles.iconSize}px` }}>
         <Icon id={icon} size={styles.iconSize} strokeWidth={styles.iconStroke} />
       </IconWrapper>
       <Input
         style={{
-          '--height': `${styles.height}px`,
           '--width': `${width}px`,
+          '--height': styles.height,
           '--borderWidth': styles.borderWidth,
           '--font-size': styles.fontSize,
         }}
